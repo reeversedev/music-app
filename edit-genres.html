@@ -11,21 +11,27 @@
 </head>
 
 <body>
-    <div class="container" ng-controller="music">
+    <div class="container" ng-controller="editGenres">
         <div>
-            <h1 class="text-center">Track's Genres</h1>
+            <h1>Add New Genre</h1>
         </div>
-        <div>
-            <ul class="list-group" ng-repeat="track in tracks">
-                <li class="list-group-item" ng-show="track.genres[0]">{{track.genres[0].name}}</li>
+        <div class="form-group">
+            <label>Genre Name:</label>
+            <input type="text" class="form-control" ng-model="add_genre" ng-keyup="add($event)">
+        </div>
+        <div class="clearfix">
+            <button class="btn btn-default col-xs-12 bottom-button" value="click" id="button">Add New Genre</button>
+        </div>
+        <div class="clearfix">
+            <label>Available Genres</label>
+            <ul class="list-group" ng-repeat="genre in genres">
+                <li class="list-group-item">{{genre.name}}</li>
             </ul>
         </div>
         <div hidden>
             <input type="text" id="inputBox">
         </div>
-        <div>
-           <a ng-href="edit-genres.html"><button class="btn btn-default col-xs-12 bottom-button" value="click" id="button">Add New Genre</button></a>
-        </div>
+
     </div>
 </body>
 
