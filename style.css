@@ -21,6 +21,16 @@ li {
 .bottom-button {
     margin-bottom: 10px;
 }
+.title {
+    text-transform: capitalize;
+    margin-right: 10px;
+}
+.rating {
+    font-size: 24px;
+}
+.genre {
+    text-transform: uppercase;
+}
 a {
     color: white;
 }

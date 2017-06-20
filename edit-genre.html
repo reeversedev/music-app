@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="musicApp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="editGenres">
+        <div>
+            <h1>Edit Genre</h1>
+        </div>
+        <div class="form-group">
+            <label>Enter the ID of Genre</label>
+            <input type="number" class="form-control" placeholder="Enter ID" ng-model="genre_id" ng-keyup="add($event)">
+        </div>
+        <div class="form-group">
+            <label>ID</label>
+            <input type="number" value="{{genres.id}}" class="form-control" disabled>
+        </div>
+        <div class="form-group"> 
+            <lable> Name:</lable>
+            <input type="text" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="genres.name"> 
+        </div>
+        <div>
+            <button class="btn btn-primary col-xs-12">Edit Genre</button>
+        </div>
+    </div>
+</body>
+
+</html>

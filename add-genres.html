@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="musicApp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="addGenres">
+        <div>
+            <h1>Add New Genre</h1>
+        </div>
+        <div class="form-group">
+            <label>Genre Name:</label>
+            <input type="text" class="form-control" ng-model="add_genre" ng-keyup="add($event)" placeholder="Type to add new Genre">
+        </div>
+        <div class="clearfix">
+            <button class="btn btn-default col-xs-12 bottom-button" value="click" id="button">Add New Genre</button>
+        </div>
+        <div class="clearfix">
+            <label>Available Genres</label>
+            <ul class="list-group" ng-repeat="genre in genres">
+                <li class="list-group-item">{{genre.name}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="musicApp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="addTrack">
+        <div>
+            <h1>Add New Track</h1>
+        </div>
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" class="form-control" ng-model="track.title" placeholder="Type to add new Title">
+        </div>
+        <div class="form-group">
+            <label>Genre:</label>
+            <input type="text" class="form-control" ng-model="track.genre" placeholder="Type to add new Genre">
+        </div>
+        <div class="form-group">
+            <label>Rating:</label>
+            <input type="text" class="form-control" ng-model="track.rating" placeholder="Type to add new Rating" ng-keyup="add($event)">
+        </div>
+
+        <div class="clearfix">
+            <button class="btn btn-primary col-xs-12 bottom-button" value="click" id="button">Add a New Track</button>
+        </div>
+        <div class="clearfix">
+            <label>Available Tracks</label>
+            <ul class="list-group" ng-repeat="track in tracks">
+                <li class="list-group-item clearfix"><span class="pull-left title">{{track.title}}</span> <span class="genre">[{{track.genres[0].name}}]</span> <span class="pull-right rating">{{track.rating}}</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
