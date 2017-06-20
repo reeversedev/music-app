@@ -1,3 +1,6 @@
+body {
+    font-family: 'Patrick Hand SC', cursive;
+}
 input[type=search] {
     width: 200px;
     box-sizing: border-box;
@@ -12,7 +15,7 @@ input[type=search]:focus{
     width: 100%;
 }
 li {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 #search {
@@ -27,6 +30,8 @@ li {
 }
 .rating {
     font-size: 24px;
+    color: yellow;
+    margin-left: 5px;
 }
 .genre {
     text-transform: uppercase;

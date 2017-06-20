@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
@@ -19,17 +20,27 @@
             <label>Enter the ID of Genre</label>
             <input type="number" class="form-control" placeholder="Enter ID" ng-model="genre_id" ng-keyup="add($event)">
         </div>
-        <div class="form-group">
-            <label>ID</label>
-            <input type="number" value="{{genres.id}}" class="form-control" disabled>
+        <form name="formName">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="number" value="{{genres.id}}" class="form-control" disabled>
+            </div>
+            <div class="form-group">
+                <lable>Name:</lable>
+                <input type="text" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="genres.name">
+            </div>
+        </form>
+        <div class="clearfix">
+            <button class="btn btn-primary col-xs-12" ng-click="submit()">Edit Genre</button>
         </div>
-        <div class="form-group"> 
-            <lable> Name:</lable>
-            <input type="text" class="form-control" ng-model-options="{updateOn: 'blur'}" ng-model="genres.name"> 
+        <div class="clearfix">
+            <label>Genres Available</label>
+            <ul class="list-group" ng-repeat="genre in genres">
+                <li class="list-group-item">ID: {{genre.id}}</li>
+                <li class="list-group-item" >Name: {{genre.name}}</li>
+            </ul>
         </div>
-        <div>
-            <button class="btn btn-primary col-xs-12">Edit Genre</button>
-        </div>
+
     </div>
 </body>
 

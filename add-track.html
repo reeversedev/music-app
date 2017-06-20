@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="musicApp">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -17,19 +16,18 @@
         </div>
         <div class="form-group">
             <label>Title:</label>
-            <input type="text" class="form-control" ng-model="track.title" placeholder="Type to add new Title">
+            <input type="text" class="form-control" ng-model="add_title" ng-model-options="{updateOn: 'blur'}" placeholder="Type to add new Title">
         </div>
         <div class="form-group">
             <label>Genre:</label>
-            <input type="text" class="form-control" ng-model="track.genre" placeholder="Type to add new Genre">
+            <input type="text" class="form-control" ng-model="add_genre" ng-model-options="{updateOn: 'blur'}" placeholder="Type to add new Genre">
         </div>
         <div class="form-group">
             <label>Rating:</label>
-            <input type="text" class="form-control" ng-model="track.rating" placeholder="Type to add new Rating" ng-keyup="add($event)">
+            <input type="text" class="form-control" ng-model="add_rating" ng-model-options="{updateOn: 'blur'}" placeholder="Type to add new Rating">
         </div>
-
         <div class="clearfix">
-            <button class="btn btn-primary col-xs-12 bottom-button" value="click" id="button">Add a New Track</button>
+            <button class="btn btn-primary col-xs-12 bottom-button" value="click" id="button" ng-click="add()">Add a New Track</button>
         </div>
         <div class="clearfix">
             <label>Available Tracks</label>
@@ -39,5 +37,4 @@
         </div>
     </div>
 </body>
-
 </html>
